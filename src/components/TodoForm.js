@@ -6,6 +6,12 @@ export default class TodoForm extends Component {
 
     const { item, editItem, handleChange, handleSubmit } = this.props;
 
+    let disableButton = true;
+
+    if (item !== '') {
+      disableButton = false
+    }
+
     return (
     <div className="card my-3">
       <div className={editItem ? "card-body border border-success" : "card-body"}
@@ -19,7 +25,7 @@ export default class TodoForm extends Component {
             </div>
             <input onChange={handleChange} value={item} type="text" className="form-control text-capitalize" placeholder="Enter todo"/>
           </div>
-          <button type="submit" className={`btn btn-block btn-${ editItem ? "success" : "primary"} mt-3`}>
+          <button disabled={disableButton} type="submit" className={`btn btn-block btn-${ editItem ? "success" : "primary"} mt-3`}>
             <FaPaperPlane className="mr-1"/> { editItem ? "edit todo" : "add to do"}
           </button>
         </form>
