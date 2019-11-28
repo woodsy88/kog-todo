@@ -2,12 +2,6 @@ import React, { Component } from 'react'
 import { FaPencilAlt, FaTrashAlt } from "react-icons/fa";
 
 export default class TodoItem extends Component {
-
-  // deleteItem = () => {
-  //   const { id, handleDelete } = this.props;
-  //   console.log("delete item ran");
-  //   handleDelete(id)
-  // };
   
   render() {
     

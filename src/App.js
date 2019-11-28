@@ -17,7 +17,6 @@ class App extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    // let tempItems = [...this.state.items, this.state.item];
     const newItem = {
       id: uuid(),
       title: this.state.item
@@ -68,30 +67,30 @@ class App extends React.Component {
     
   }
 
-render () {
-  return (
-    <div className="container">
-      <div className="row">
-        <div className="col-10 mx-auto col-md-8 mt-4">
-          <h3 className="text-capitalize text-center">
-            Todos
-          </h3>
-          <TodoForm 
-            handleChange={this.handleChange}
-            item={this.state.item} 
-            handleSubmit={this.handleSubmit}
-            editItem={this.state.editItem}
-          />
-          <TodoList 
-            handleDelete={this.handleDelete}
-            items={this.state.items} 
-            clearList={this.clearList}
-            handleEdit={this.handleEdit}
-          />
+  render () {
+    return (
+      <div className="container">
+        <div className="row">
+          <div className="col-10 mx-auto col-md-8 mt-4">
+            <h3 className="text-capitalize text-center">
+              Todos
+            </h3>
+            <TodoForm 
+              handleChange={this.handleChange}
+              item={this.state.item} 
+              handleSubmit={this.handleSubmit}
+              editItem={this.state.editItem}
+            />
+            <TodoList 
+              handleDelete={this.handleDelete}
+              items={this.state.items} 
+              clearList={this.clearList}
+              handleEdit={this.handleEdit}
+            />
+          </div>
         </div>
       </div>
-    </div>
-  );}
+    );}
 }
 
 export default App;
